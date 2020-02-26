@@ -1,6 +1,7 @@
 library(testthat)
 #' Welch's t-test
 #'
+#' Calculates the Welch t-test
 #'
 #' @param x vector of observations group 1
 #' @param y vector of observations group 2
