@@ -14,7 +14,6 @@
 calc_t_test <- function(x, y, mu = 0) {
   validate_t_input(x, y)
 
-
   # calculate preliminaries
   mean_x <- mean(x)
   mean_y <- mean(y)
@@ -37,11 +36,11 @@ calc_t_test <- function(x, y, mu = 0) {
   df_denumer <- var_x^2 / (n1^2 * v_x) + var_y^2 / (n2^2 * v_y)
   df <- df_numer / df_denumer
 
-  p <- calc_p_val(t,df)
+  p <- calc_p_val(t, df)
   return(list(t = t, df = df, p = p))
 }
 
-calc_p_val <- function(t,df){
+calc_p_val <- function(t, df) {
   p_val_bigger <- pt(t, df, lower.tail = TRUE)
   p_val_smaller <- pt(t, df, lower.tail = FALSE)
   p <- 2 * min(p_val_bigger, p_val_smaller)
